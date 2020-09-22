@@ -229,7 +229,7 @@ def route_up(args):
         # route all traffic over the tunnel
         subprocess.check_call(
             _enter_namespace_cmd(namespace) +
-            [IP_CMD, 'route', 'add', 'default', 'dev', dev]
+            [IP_CMD, 'route', 'add', 'default', 'via', route_vpn_gateway, 'dev', dev]
         )
 
     if ipv6_enabled:
